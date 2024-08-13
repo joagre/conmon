@@ -2,7 +2,7 @@
 
 A very raw netwprk monitor just for my needs.
 
-'''sh
+```sh
 $ ./conmon.sh
 Next curl in 80 seconds
 Next ping in 10 seconds
@@ -28,6 +28,7 @@ $ ./plot_curl_times.gp
 $ eog ping_log.png
 $ eog curl_log.png
 ```
+
 ![Ping times](examples/ping_log.png)
 
 ![Download times](examples/curl_log.png)
