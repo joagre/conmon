@@ -1,6 +1,6 @@
 # A network health monitor
 
-A very raw netwprk monitor just for my needs.
+A very raw network monitor just for my needs.
 
 ```sh
 $ ./conmon.sh
