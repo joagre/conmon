@@ -4,7 +4,7 @@ set terminal pngcairo size 800,600
 set output 'curl_log.png'
 
 set title "100MB download time"
-set xlabel "Time (Unix timestamp)"
+set xlabel "Time (seconds)"
 set ylabel "Download time (seconds)"
 set grid
 

@@ -4,7 +4,7 @@ set terminal pngcairo size 800,600
 set output 'ping_log.png'
 
 set title "Roundtrip time"
-set xlabel "Time (Unix timestamp)"
+set xlabel "Time (seconds)"
 set ylabel "Roundtrip time (milliseconds)"
 set grid
 
