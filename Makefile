@@ -4,7 +4,7 @@ all:
 	(cd src; make all)
 
 start:
-	$(ERL) -pa ../ebin -sname test
+	$(ERL) -pa ebin
 
 clean:
 	(cd src; make clean)
