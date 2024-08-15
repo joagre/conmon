@@ -14,7 +14,10 @@ start(Host) ->
 
 start(Host, Port) ->
     {ok, Socket} =
-        gen_tcp:connect(Host, Port, [binary, {packet, 0}, {active, false}]),
+        gen_tcp:connect(Host, Port, [binary, {packet, 0}, {active, false},
+                                     {nodelay, true}, {recbuf, 128 * 1024}]),
+    {ok, [{recbuf, Recbuf}]} = inet:getopts(Socket, [recbuf]),
+    io:format("recbuf: ~w\n", [Recbuf]),
     _ = file:delete(?LOG_FILE),
     io:format("Connected to server ~p:~p~n", [Host, Port]),
     spawn(fun() -> send_timestamps(Socket) end),

@@ -18,6 +18,9 @@ start(Port) ->
 
 accept(ListenSocket) ->
     {ok, Socket} = gen_tcp:accept(ListenSocket),
+    ok = inet:setopts(Socket, [{nodelay, true}, {sndbuf, 128 * 1024}]),
+    {ok, [{sndbuf, Sndbuf}]} = inet:getopts(Socket, [sndbuf]),
+    io:format("sndbuf: ~w\n", [Sndbuf]),
     io:format("Client connected~n"),
     Data = crypto:strong_rand_bytes(?CHUNK_SIZE),
     spawn(fun() -> stream_data(Socket, Data) end),
