@@ -4,6 +4,6 @@
 -define(TIMESTAMP_HEADER, 1).
 -define(TIMESTAMP_SIZE, 8).
 -define(CHUNK_SIZE, 1024).
--define(PORT, 12345).
+-define(PORT, 6666).
 
 -endif.
